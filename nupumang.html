@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">  <title>NUPUMÄNG</title>
+</head>
+<body>
+
+<style>
+
+html {
+    cursor: crosshair;
+}
+    
+.button {
+    position: absolute;
+    background-color: #af4caa;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    margin: 4px 2px;
+    cursor: crosshair;
+}
+
+.button:before {
+    content: 'Catch me!';
+}
+.button:hover:before {
+    content: 'U got me!';
+}
+
+</style>
+</head>
+<body>
+    <h1>Nupumäng</h1>
+    <p>Proovi nupp kätte saada</p>
+
+    <button class="button" id="button1"></button>
+
+    <script>
+    function hiirOnPeal(event){
+        let button = event.target
+        var goX = Math.random()*300;
+        var goY = Math.random()*300;
+        button.style.top = goY+"px";
+        button.style.left = goX+"px";
+        //button.textContent = "U got me!"
+    }
+
+        document.getElementById("button1").addEventListener('mouseover', hiirOnPeal);
+    </script>
+
+</body>
+</html>
